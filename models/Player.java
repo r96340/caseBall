@@ -5,12 +5,12 @@ public abstract class Player {
 
     //屬性
     String name;                      //球員名
-    protected short luck;             //運氣值
-    protected short collaboration;    //默契值
-    protected short clutch;           //拚勁值
+    protected int luck;             //運氣值
+    protected int collaboration;    //默契值
+    protected int clutch;           //拚勁值
 
     //建構子
-    protected Player(String name, short luck, short collaboration, short clutch){
+    protected Player(String name, int luck, int collaboration, int clutch){
         this.name                  = name;
         this.luck                  = luck;
         this.collaboration         = collaboration;
@@ -18,8 +18,8 @@ public abstract class Player {
     }
 
     //get方法
-    public short getLuck(){return this.luck;};
-    public short getCollaboration(){return this.collaboration;};
-    public short getClutch(){return this.clutch;};
+    public int getLuck(){return this.luck;};
+    public int getCollaboration(){return this.collaboration;};
+    public int getClutch(){return this.clutch;};
 
 }

@@ -8,7 +8,7 @@ public class launch {
     public static Scanner scanner = new Scanner(System.in);
 
     //比賽流程變數
-    public static byte inning = 7;              //遊戲從第七局開始
+    public static byte inning = 9;              //遊戲從第九局開始
     public static boolean isTopOfInning = true; //上下半局
     public static int totalGreen = 0;           //綠隊總分
     public static int totalWhite = 0;           //白隊總分
@@ -60,7 +60,7 @@ public class launch {
         System.out.println("========================================");
         System.out.println("        規則");
         System.out.println("========================================");
-        System.out.println("此程式接下來會模擬三個半局（7、8、9）的棒球比賽：");
+        System.out.println("此程式接下來會模擬最後一個半局（9）的棒球比賽：");
         System.out.println("上半局玩家將控制投手投球及野手接球；");
         System.out.println("下半局玩家將控制打者打擊。自動跑壘。");
         System.out.println("安打暫時只有一壘安打與全壘打兩種。");
@@ -103,30 +103,58 @@ public class launch {
 
     //球員總表
     public static void initializeRegistration(){
-        registration[1] = new Fielder("曾子祐", 50, 90, 75, 60, 50, 60, 60, false, new short[]{50,50}, new short[]{50,90,0,0}, '0');
-        registration[5] = "王博玄";
-        registration[7] = "郭永維";
-        registration[9] = "王柏融";
-        registration[24] = "紀慶然";
-        registration[25] = "黃秉揚";
-        registration[29] = "張肇元";
-        registration[30] = "艾速特";
-        registration[31] = "吳明鴻";
-        registration[33] = "陳致嘉";
-        registration[39] = "吳念庭";
-        registration[40] = "後勁";
-        registration[43] = "胡冠俞";
-        registration[44] = "曾昱磬";
-        registration[46] = "黃群";
-        registration[48] = "林詩翔";
-        registration[50] = "高聖恩";
-        registration[55] = "伍祐城";
-        registration[59] = "郭阜林";
-        registration[71] = "杜家明";
-        registration[73] = "葉保弟";
-        registration[79] = "陳飛霖";
-        registration[88] = "藍寅倫";
-        registration[93] = "張誠恩";
-        registration[94] = "魔鷹";
+
+        registration[1] = new Fielder("曾子祐", 60, 60, 70, 60, 60);
+
+        registration[5] = new Fielder("王博玄", 100, 90, 100, 75, 70,
+                                      50, 90, true, new int[]{20,80}, new int[]{100,0,80,20});
+
+        registration[7] = new Fielder("郭永維", 90, 30, 50, 50, 100);
+
+        registration[9] = new Fielder("王柏融", 85, 40, 45, 95, 50,
+                                      100, 25, true, new int[]{30,70}, new int[]{0,0,50,50});
+
+        registration[24] = new Fielder("紀慶然", 75, 75, 65, 45, 100,
+                                       80, 50, true, new int[]{100,0}, new int[]{0,0,20,80});
+
+        registration[25] = new Fielder("黃秉揚", 30, 70, 60, 30, 50);
+
+        registration[29] = new Catcher("張肇元", 50, 50, 100, 100, 100,
+                                       50, 0, false, new int[]{100,50});
+
+        registration[33] = new Catcher("陳致嘉", 100, 100, 0, 0, 50,
+                                       0, 50, false, new int[]{0,0});
+
+        registration[39] = new Fielder("吳念庭", 50, 100, 90, 40, 90);
+
+        registration[43] = new Fielder("胡冠俞", 10, 40, 30, 20, 10);
+
+        registration[44] = new Fielder("曾昱磬", 45, 80, 80, 100, 0,
+                                       20, 35, true, new int[]{0,100}, new int[]{0,-1,0,100}); //中線內野適性待修改
+
+        registration[46] = new Pitcher("黃群", 50, 50, 50, new int[]{75, 75});
+
+        registration[48] = new Pitcher("林詩翔", 0, 0, 150, new int[]{50, 100});
+
+        registration[50] = new Fielder("高聖恩", 65, 50, 75, 60, 30,
+                                       0, 70, false, new int[]{80,20}, new int[]{0,0,30,70});
+
+        registration[59] = new Fielder("郭阜林", 80, 10, 20, 90, 80);
+
+        registration[71] = new Fielder("杜家明", 20, 0, 10, 80, 40);
+
+        registration[73] = new Fielder("葉保弟", 0, 25, 55, 35, 20,
+                                       70, 45, true, new int[]{50,50}, new int[]{0,0,100,0});
+
+        registration[78] = new Catcher("陳世嘉", 0, 0, 50, 50, 0,
+                                       100, 100, true, new int[]{100,50});
+
+        registration[79] = new Fielder("陳飛霖", 0, 20, 40, 15, 30);
+
+        registration[88] = new Fielder("藍寅倫", 25, 100, 90, 80, 80,
+                                       30, 80, true, new int[]{70,30}, new int[]{0,0,70,30});
+
+        registration[94] = new Hitter("魔鷹", 0, 100, 100, 100, 50,
+                                      45, 55, true, new int[]{75,85});
     }
 }

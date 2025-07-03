@@ -4,7 +4,7 @@ package models;
 public class Pitcher extends Player implements Fieldable {
     
     //特有屬性
-    protected short[] pitchTypeControls; //球種別控制力
+    protected int[] pitchTypeControls; //球種別控制力
 
     //目前簡化為0:直球 1:變化球
     /*
@@ -13,11 +13,16 @@ public class Pitcher extends Player implements Fieldable {
         6:滑球    7:橫掃球    8:蝴蝶球
     */
     
-    public Pitcher(String name, short luck, short collaboration, short clutch, short stamina, short[] pitchTypeControls){
-        super(name,, luck, collaboration, clutch);
+    public Pitcher(String name, int luck, int collaboration, int clutch, int[] pitchTypeControls){
+        super(name, luck, collaboration, clutch);
         this.pitchTypeControls = pitchTypeControls;
     }
 
     //get方法
-    public short getPitchTypeControl(byte index){return this.pitchTypeControls[index];};
+    public int getPitchTypeControl(byte index){return this.pitchTypeControls[index];};
+
+    public void grabDirect(){};
+    public void grabDropped(){};
+    public void slidingCatch(){};
+    public void divingCatch(){};
 }
