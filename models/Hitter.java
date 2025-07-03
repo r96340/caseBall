@@ -1,4 +1,4 @@
-package model;
+package models;
 
 //打者
 public class Hitter extends Player {
@@ -9,7 +9,9 @@ public class Hitter extends Player {
     short plateDiscipline;            //選球
     short speed;                      //跑壘速度
     boolean isLefty;                  //是否為左打者
-    protected byte[] pitchTypeSights; //球種辨識力
+    protected short[] pitchTypeSights; //球種辨識力
+
+    //目前簡化為0:直球 1:變化球
 
     /*
         0:直球    1:卡特球    2:伸卡球
@@ -20,10 +22,10 @@ public class Hitter extends Player {
 
     //建構子
     //只有指定打擊會直接使用這個建構子
-    public Hitter(String name, short jerseyNumber, short luck, short collaboration, short clutch, 
-                  short power, short batControl, short plateDiscipline, short speed, boolean isLefty, byte[] pitchTypeSights){
+    public Hitter(String name, short luck, short collaboration, short clutch, 
+                  short power, short batControl, short plateDiscipline, short speed, boolean isLefty, short[] pitchTypeSights){
         
-        super(name, jerseyNumber, luck, collaboration, clutch);
+        super(name, luck, collaboration, clutch);
         this.speed           = speed;
         this.power           = power;
         this.batControl      = batControl;

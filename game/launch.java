@@ -1,6 +1,7 @@
 package game;
 import java.util.Scanner;
 import tools.*;
+import models.*;
 
 public class launch {
 
@@ -13,9 +14,11 @@ public class launch {
     public static int totalWhite = 0;           //白隊總分
 
     //球員變數
-    public static String registration[] = new String[100]; //總登錄球員表，索引為背號
-    public static String rosterGreen[] = new String[9];    //綠隊打線
-    public static String rosterWhite[] = new String[9];    //白隊打線
+    public static Player registration[]  = new Player[100];  //總登錄球員表，索引為背號
+    public static Hitter orderGreen[]    = new Hitter[9];    //綠隊打線，索引+1為打序
+    public static Player fieldingGreen[] = new Player[10];   //綠隊守位，索引為守備位置，0為指定打擊
+    public static Hitter orderWhite[]    = new Hitter[9];    //白隊打線
+    public static Player fieldingWhite[] = new Player[10];   //白隊守位
 
     //主程式
     public static void main(String[] args) {
@@ -35,6 +38,7 @@ public class launch {
         scanner.nextLine();
         scanner.nextLine(); //scanner緩衝
         initializeRegistration();
+        tools.clearScreen.all();
 
         //玩家指定白隊守位
         white.setPositions();
@@ -53,7 +57,18 @@ public class launch {
         green.setBullpen();
 
         //顯示遊戲規則
-
+        System.out.println("========================================");
+        System.out.println("        規則");
+        System.out.println("========================================");
+        System.out.println("此程式接下來會模擬三個半局（7、8、9）的棒球比賽：");
+        System.out.println("上半局玩家將控制投手投球及野手接球；");
+        System.out.println("下半局玩家將控制打者打擊。自動跑壘。");
+        System.out.println("安打暫時只有一壘安打與全壘打兩種。");
+        System.out.println("程式會給出各種選項，玩家必須在十秒鐘以內反應，");
+        System.out.println("否則系統會自動決定結果。");
+        System.out.println("（計時功能尚未追加。）");
+        System.out.println("========================================");
+        System.out.println("        輸入任意字元開始遊戲");
 
         //遊戲進行
         while(inning < 10){
@@ -88,7 +103,7 @@ public class launch {
 
     //球員總表
     public static void initializeRegistration(){
-        registration[1] = "曾子祐";
+        registration[1] = new Fielder("曾子祐", 50, 90, 75, 60, 50, 60, 60, false, new short[]{50,50}, new short[]{50,90,0,0}, '0');
         registration[5] = "王博玄";
         registration[7] = "郭永維";
         registration[9] = "王柏融";
@@ -96,6 +111,7 @@ public class launch {
         registration[25] = "黃秉揚";
         registration[29] = "張肇元";
         registration[30] = "艾速特";
+        registration[31] = "吳明鴻";
         registration[33] = "陳致嘉";
         registration[39] = "吳念庭";
         registration[40] = "後勁";

@@ -1,4 +1,4 @@
-package model;
+package models;
 
 //守備選項介面
 public interface Fieldable {
