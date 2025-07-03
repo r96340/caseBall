@@ -1,13 +1,21 @@
 package model;
 
-public class Fielder extends Hitter {
+//野手
+public class Fielder extends Hitter implements Fieldable {
     
     //屬性
-    short affinity1B3B;     //角落內野（一壘、三壘）適性
-    short affinity2BSS;     //中線內野（二壘、游擊）適性
-    short affinityLFRF;     //角落外野（左外野、右外野）適性
-    short affinityCF;       //中外野適性
-    short position;         //實際守位
+    protected short[] positionAffinities; //守位適性
+    //0:角落內野 1:中線內野 2:角落外野 3:中外野
+    public short position;               //實際守位
 
-    
+    public Fielder(String name, short jerseyNumber, short luck, short collaboration, short clutch, 
+                   short power, short batControl, short plateDiscipline, short speed, boolean isLefty, byte[] pitchTypeSights,
+                   short[] positionAffinities, short position){
+
+        super(name, jerseyNumber, luck, collaboration, clutch, power, batControl, plateDiscipline, speed, isLefty, pitchTypeSights);
+        this.positionAffinities = positionAffinities;
+        this.position     = position;
+    }
+
+    public short getPositionAffinity(byte index){return this.positionAffinities[index];};
 }

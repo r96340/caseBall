@@ -1,5 +1,6 @@
 package model;
 
+//選手抽象類別
 public abstract class Player {
 
     //屬性
@@ -26,8 +27,8 @@ public abstract class Player {
     }
 
     //get方法
-    protected short getLuck(){return this.luck;};
-    protected short getCollaboration(){return this.collaboration;};
-    protected short getClutch(){return this.clutch;};
+    public short getLuck(){return this.luck;};
+    public short getCollaboration(){return this.collaboration;};
+    public short getClutch(){return this.clutch;};
 
 }

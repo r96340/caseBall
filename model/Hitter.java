@@ -1,16 +1,14 @@
 package model;
 
+//打者
 public class Hitter extends Player {
     
-    //屬性
-    byte hitterClass; //打者類型
-
-    /*
-        0:速度型    1:選球型    2:大砲型
-        3:巧打型    4:盲砲型
-     */
-
-    boolean isLefty; //是否為左打者
+    //特有屬性
+    short power;                      //力量值
+    short batControl;                 //球棒控制力
+    short plateDiscipline;            //選球
+    short speed;                      //跑壘速度
+    boolean isLefty;                  //是否為左打者
     protected byte[] pitchTypeSights; //球種辨識力
 
     /*
@@ -19,13 +17,19 @@ public class Hitter extends Player {
         6:滑球    7:橫掃球    8:蝴蝶球
     */
     
+
     //建構子
     //只有指定打擊會直接使用這個建構子
-     public Hitter(String name, short jerseyNumber, short luck, short collaboration, short clutch, byte hitterClass, boolean isLefty, byte[] pitchTypeSights){
+    public Hitter(String name, short jerseyNumber, short luck, short collaboration, short clutch, 
+                  short power, short batControl, short plateDiscipline, short speed, boolean isLefty, byte[] pitchTypeSights){
+        
         super(name, jerseyNumber, luck, collaboration, clutch);
-        this.hitterClass = hitterClass;
-        this.isLefty = isLefty;
+        this.speed           = speed;
+        this.power           = power;
+        this.batControl      = batControl;
+        this.plateDiscipline = plateDiscipline;
+        this.isLefty         = isLefty;
         this.pitchTypeSights = pitchTypeSights;
-     }
+    }
 
 }
