@@ -22,6 +22,7 @@ public class launch {
 
     //主程式
     public static void main(String[] args) {
+
         //設定編碼為UTF-8
         try{
             new ProcessBuilder("chcp 65001").inheritIO().start().waitFor();
@@ -40,21 +41,21 @@ public class launch {
         initializeRegistration();
         tools.clearScreen.all();
 
-        //玩家指定白隊守位
-        white.setPositions();
-
-        //玩家指定白隊打序
-        white.setOrder();
-
-        //電腦自動指定白隊登錄投手
-        white.setSP();
-        white.setBullpen();
-
         //電腦自動指定綠隊成員
         green.setPositions();
         green.setOrder();
         green.setSP();
         green.setBullpen();
+
+        //電腦自動指定白隊登錄投手
+        white.setSP();
+        white.setBullpen();
+
+        //玩家指定白隊守位
+        white.setPositions();
+
+        //玩家指定白隊打序
+        white.setOrder();
 
         //顯示遊戲規則
         System.out.println("========================================");
