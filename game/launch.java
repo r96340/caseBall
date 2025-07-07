@@ -67,7 +67,7 @@ public class launch {
         System.out.println("安打暫時只有一壘安打與全壘打兩種。");
         System.out.println("程式會給出各種選項，玩家必須在十秒鐘以內反應，");
         System.out.println("否則系統會自動決定結果。");
-        System.out.println("（計時功能尚未追加。）");
+        System.out.println("（計時功能尚未實作。）");
         System.out.println("========================================");
         System.out.println("        輸入任意字元開始遊戲");
 
