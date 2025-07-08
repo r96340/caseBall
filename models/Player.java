@@ -22,4 +22,8 @@ public abstract class Player {
     public int getCollaboration(){return this.collaboration;};
     public int getClutch(){return this.clutch;};
 
+    public void showRegistry(int number){
+        System.out.printf("%d\t%s\t\n", number, name);
+    }
+
 }
