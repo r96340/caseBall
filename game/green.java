@@ -55,7 +55,7 @@ public class green {
         System.out.println("========================================");
         for(int i=0;i<100;i++){
             if(launch.registration[i] instanceof models.Fielder){
-                if(1==1){
+                if(((models.Fielder)(launch.registration[i])).getPositionAffinity(0) > 0){
                     launch.registration[i].showRegistry(i);
                 }
             }

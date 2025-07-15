@@ -17,7 +17,7 @@ public class Fielder extends Hitter implements Fieldable {
     }
 
     //get方法
-    public int getPositionAffinity(byte index){return this.positionAffinities[index];};
+    public int getPositionAffinity(int index){return this.positionAffinities[index];};
 
     public void grabDirect(){};
     public void grabDropped(){};
