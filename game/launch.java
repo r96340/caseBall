@@ -43,19 +43,19 @@ public class launch {
 
         //電腦自動指定綠隊成員
         green.setPositions();
-        green.setOrder();
-        green.setSP();
-        green.setBullpen();
+        //green.setOrder();
+        //green.setSP();
+        //green.setBullpen();
 
         //電腦自動指定白隊登錄投手
-        white.setSP();
-        white.setBullpen();
+        //white.setSP();
+        //white.setBullpen();
 
         //玩家指定白隊守位
         white.setPositions();
 
         //玩家指定白隊打序
-        white.setOrder();
+        //white.setOrder();
 
         //顯示遊戲規則
         System.out.println("========================================");
@@ -75,10 +75,10 @@ public class launch {
         while(inning < 10){
             if(isTopOfInning=true){
                 //上半局綠隊（電腦）打擊白隊（玩家）守備
-                offense.green();
+                //offense.green();
             }else{
                 //下半局白隊（玩家）打擊綠隊（電腦）守備
-                offense.white();
+                //offense.white();
             }
             inning++;
         }
