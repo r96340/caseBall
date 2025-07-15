@@ -67,7 +67,7 @@ public class launch {
         System.out.println("否則系統會自動決定結果。");
         System.out.println("（計時功能尚未實作。）");
         System.out.println("========================================");
-        System.out.println("        輸入任意字元開始遊戲");
+        System.out.println("        按輸入鍵開始遊戲");
 
         //遊戲進行
         while(inning < 10){
@@ -95,7 +95,7 @@ public class launch {
             System.out.println("        平手");
             System.out.println("========================================");
         }
-        System.out.println("        輸入任意字元結束遊戲");
+        System.out.println("        按輸入鍵結束遊戲");
         scanner.nextLine();
     }
 
