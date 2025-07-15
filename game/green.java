@@ -10,6 +10,7 @@ public class green {
 
     //指定守位
     public static void setPositions() {
+
         tools.clearScreen.all();
         System.out.println("========================================");
         System.out.println("        電腦指定綠隊投手");
@@ -26,6 +27,25 @@ public class green {
         launch.fieldingGreen[1] = launch.registration[mockScanner];
         System.out.println("電腦指定 " + mockScanner + "號 " + launch.fieldingGreen[1].name);
         System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
         
+
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        電腦指定綠隊捕手");
+        System.out.println("========================================");
+        for(int i=0;i<100;i++){
+            if(launch.registration[i] instanceof models.Catcher){
+                launch.registration[i].showRegistry(i);
+            }
+        }
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        //初版強制選擇投手為 33號 陳致嘉
+        mockScanner = 33;
+        launch.fieldingGreen[2] = launch.registration[mockScanner];
+        System.out.println("電腦指定 " + mockScanner + "號 " + launch.fieldingGreen[2].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
     }
 }

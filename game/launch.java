@@ -97,6 +97,7 @@ public class launch {
         }
         System.out.println("        按輸入鍵結束遊戲");
         scanner.nextLine();
+        tools.clearScreen.all();
     }
 
     //球員總表
