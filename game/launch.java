@@ -127,10 +127,10 @@ public class launch {
         registration[33] = new Catcher("陳致嘉", 100, 100, 0, 0, 50,
                                        0, 50, false, new int[]{0,0});
 
-        registration[39] = new Fielder("吳念庭", 50, 100, 90, 40, 90,
+        registration[39] = new Fielder("呉念庭", 50, 100, 90, 40, 90,
                                        90, 60, true, new int[]{30,70}, new int[]{50, 50, 0, 0});
 
-        registration[43] = new Fielder("胡冠俞", 10, 40, 30, 20, 10,
+        registration[43] = new Fielder("胡冠兪", 10, 40, 30, 20, 10,
                                        0, 50, false, new int[]{70,30}, new int[]{20, 80, 0, 0});
 
         registration[44] = new Fielder("曾昱磬", 45, 80, 80, 100, 0,
