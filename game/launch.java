@@ -62,7 +62,7 @@ public class launch {
         System.out.println("========================================");
         System.out.println("此程式接下來會模擬最後一個半局（9）的棒球比賽：");
         System.out.println("上半局玩家將控制投手投球及野手接球；");
-        System.out.println("下半局玩家將控制打者打擊。自動跑壘。");
+        System.out.println("下半局玩家將控制打者打撃。自動進壘。");
         System.out.println("安打暫時只有一壘安打與全壘打兩種。");
         System.out.println("程式會給出各種選項，玩家必須在十秒鐘以內反應，");
         System.out.println("否則系統會自動決定結果。");
@@ -119,7 +119,7 @@ public class launch {
         registration[24] = new Fielder("紀慶然", 75, 75, 65, 45, 100,
                                        80, 50, true, new int[]{100,0}, new int[]{0,0,20,80});
 
-        registration[25] = new Fielder("黃秉揚", 30, 70, 60, 30, 50,
+        registration[25] = new Fielder("黄秉揚", 30, 70, 60, 30, 50,
                                        100, 65, false, new int[]{40, 60}, new int[]{40, 60, 0, 0});
 
         registration[29] = new Catcher("張肇元", 50, 50, 100, 100, 100,
@@ -137,7 +137,7 @@ public class launch {
         registration[44] = new Fielder("曾昱磬", 45, 80, 80, 100, 0,
                                        20, 35, true, new int[]{0,100}, new int[]{35,65,0,100});
 
-        registration[46] = new Pitcher("黃群", 50, 50, 50, new int[]{75, 75});
+        registration[46] = new Pitcher("黄群", 50, 50, 50, new int[]{75, 75});
 
         registration[48] = new Pitcher("林詩翔", 0, 0, 150, new int[]{50, 100});
 
