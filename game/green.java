@@ -2,7 +2,7 @@ package game;
 
 public class green {
     
-
+    //TEST
     //使用私人建構子防止實體化
     private green(){
         throw new AssertionError("程式建構錯誤：嘗試實體化功能類別");
