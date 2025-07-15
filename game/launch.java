@@ -35,7 +35,7 @@ public class launch {
         System.out.println("========================================");
         System.out.println("        caseBall棒球模擬器");
         System.out.println("========================================");
-        System.out.println("        輸入任意字元開始遊戲");
+        System.out.println("        按輸入鍵開始遊戲");
         scanner.nextLine();
         initializeRegistration();
 

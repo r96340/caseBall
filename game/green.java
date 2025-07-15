@@ -24,7 +24,7 @@ public class green {
         //初版強制選擇投手為 46號 黃群
         int mockScanner = 46;
         launch.fieldingGreen[1] = launch.registration[mockScanner];
-        System.out.println("電腦指定" + mockScanner + launch.fieldingGreen[1].name);
+        System.out.println("電腦指定 " + mockScanner + "號 " + launch.fieldingGreen[1].name);
         System.out.println("按輸入鍵繼續...");
         
     }
