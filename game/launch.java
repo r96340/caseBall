@@ -39,7 +39,6 @@ public class launch {
         scanner.nextLine();
         scanner.nextLine(); //scanner緩衝
         initializeRegistration();
-        tools.clearScreen.all();
 
         //電腦自動指定綠隊成員
         green.setPositions();
