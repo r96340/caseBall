@@ -20,6 +20,7 @@ public class green {
             }
         }
         System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
         //初版強制選擇投手為 46號 黃群
         launch.fieldingGreen[1] = launch.registration[46];
         

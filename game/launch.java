@@ -37,7 +37,6 @@ public class launch {
         System.out.println("========================================");
         System.out.println("        輸入任意字元開始遊戲");
         scanner.nextLine();
-        scanner.nextLine(); //scanner緩衝
         initializeRegistration();
 
         //電腦自動指定綠隊成員
@@ -98,7 +97,6 @@ public class launch {
         }
         System.out.println("        輸入任意字元結束遊戲");
         scanner.nextLine();
-        scanner.nextLine(); //scanner緩衝
     }
 
     //球員總表
