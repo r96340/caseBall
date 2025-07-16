@@ -199,5 +199,57 @@ public class green {
         System.out.println("電腦指定 " + mockScanner + "號 " + launch.fieldingGreen[8].name);
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
+        
+
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        電腦指定綠隊右外野手");
+        System.out.println("========================================");
+        for(int i=0;i<100;i++){
+            if(launch.registration[i] instanceof models.Fielder){
+                if(((models.Fielder)(launch.registration[i])).getPositionAffinity(2) > 0){
+                    for(int j=3;j<9;j++){
+                        if(launch.registration[i] == launch.fieldingGreen[j]){
+                            break;
+                        }else if(j==8){
+                            launch.registration[i].showRegistry(i);
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        //初版強制選擇中外野手為 73號 葉保弟
+        mockScanner = 73;
+        launch.fieldingGreen[9] = launch.registration[mockScanner];
+        System.out.println("電腦指定 " + mockScanner + "號 " + launch.fieldingGreen[9].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        
+
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        電腦指定綠隊指定打擊");
+        System.out.println("========================================");
+        for(int i=0;i<100;i++){
+            if(launch.registration[i] instanceof models.Hitter){
+                for(int j=2;j<10;j++){
+                    if(launch.registration[i] == launch.fieldingGreen[j]){
+                        break;
+                    }else if(j==9){
+                        launch.registration[i].showRegistry(i);
+                    }
+                }
+            }
+        }
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        //初版強制選擇指定打擊為 88號 藍寅倫
+        mockScanner = 88;
+        launch.fieldingGreen[0] = launch.registration[mockScanner];
+        System.out.println("電腦指定 " + mockScanner + "號 " + launch.fieldingGreen[0].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
     }
 }
