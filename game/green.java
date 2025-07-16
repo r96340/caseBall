@@ -77,9 +77,9 @@ public class green {
         for(int i=0;i<100;i++){
             if(launch.registration[i] instanceof models.Fielder){
                 if(((models.Fielder)(launch.registration[i])).getPositionAffinity(1) > 0){
-                        if(launch.registration[i] != launch.fieldingGreen[3]){
-                            launch.registration[i].showRegistry(i);
-                        }
+                    if(launch.registration[i] != launch.fieldingGreen[3]){
+                        launch.registration[i].showRegistry(i);
+                    }
                 }
             }
         }
@@ -89,6 +89,60 @@ public class green {
         mockScanner = 79;
         launch.fieldingGreen[4] = launch.registration[mockScanner];
         System.out.println("電腦指定 " + mockScanner + "號 " + launch.fieldingGreen[4].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        
+
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        電腦指定綠隊三壘手");
+        System.out.println("========================================");
+        for(int i=0;i<100;i++){
+            if(launch.registration[i] instanceof models.Fielder){
+                if(((models.Fielder)(launch.registration[i])).getPositionAffinity(0) > 0){
+                    for(int j=3;j<5;j++){
+                        if(launch.registration[i] == launch.fieldingGreen[j]){
+                            break;
+                        }else if(j==4){
+                            launch.registration[i].showRegistry(i);
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        //初版強制選擇三壘手為 71號 杜家明
+        mockScanner = 71;
+        launch.fieldingGreen[5] = launch.registration[mockScanner];
+        System.out.println("電腦指定 " + mockScanner + "號 " + launch.fieldingGreen[5].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        
+
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        電腦指定綠隊游擊手");
+        System.out.println("========================================");
+        for(int i=0;i<100;i++){
+            if(launch.registration[i] instanceof models.Fielder){
+                if(((models.Fielder)(launch.registration[i])).getPositionAffinity(1) > 0){
+                    for(int j=3;j<6;j++){
+                        if(launch.registration[i] == launch.fieldingGreen[j]){
+                            break;
+                        }else if(j==5){
+                            launch.registration[i].showRegistry(i);
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        //初版強制選擇三壘手為 43號 胡冠俞
+        mockScanner = 43;
+        launch.fieldingGreen[6] = launch.registration[mockScanner];
+        System.out.println("電腦指定 " + mockScanner + "號 " + launch.fieldingGreen[6].name);
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
     }
