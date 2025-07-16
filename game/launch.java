@@ -120,7 +120,7 @@ public class launch {
         registration[24] = new Fielder("紀慶然", 75, 75, 65, 45, 100,
                                        80, 50, true, new int[]{100,0}, new int[]{0,0,20,80});
 
-        registration[25] = new Fielder("黄秉揚", 30, 70, 60, 30, 50,
+        registration[25] = new Fielder("黃秉揚", 30, 70, 60, 30, 50,
                                        100, 65, false, new int[]{40, 60}, new int[]{40, 60, 0, 0});
 
         registration[29] = new Catcher("張肇元", 50, 50, 100, 100, 100,
@@ -129,16 +129,16 @@ public class launch {
         registration[33] = new Catcher("陳致嘉", 100, 100, 0, 0, 50,
                                        0, 50, false, new int[]{0,0});
 
-        registration[39] = new Fielder("呉念庭", 50, 100, 90, 40, 90,
+        registration[39] = new Fielder("吳念庭", 50, 100, 90, 40, 90,
                                        90, 60, true, new int[]{30,70}, new int[]{50, 50, 0, 0});
 
-        registration[43] = new Fielder("胡冠兪", 10, 40, 30, 20, 10,
+        registration[43] = new Fielder("胡冠俞", 10, 40, 30, 20, 10,
                                        0, 50, false, new int[]{70,30}, new int[]{20, 80, 0, 0});
 
         registration[44] = new Fielder("曾昱磬", 45, 80, 80, 100, 0,
                                        20, 35, true, new int[]{0,100}, new int[]{35,65,0,100});
 
-        registration[46] = new Pitcher("黄群", 50, 50, 50, new int[]{75, 75});
+        registration[46] = new Pitcher("黃群", 50, 50, 50, new int[]{75, 75});
 
         registration[48] = new Pitcher("林詩翔", 0, 0, 150, new int[]{50, 100});
 
