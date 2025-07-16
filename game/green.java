@@ -172,5 +172,32 @@ public class green {
         System.out.println("電腦指定 " + mockScanner + "號 " + launch.fieldingGreen[7].name);
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
+        
+
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        電腦指定綠隊中外野手");
+        System.out.println("========================================");
+        for(int i=0;i<100;i++){
+            if(launch.registration[i] instanceof models.Fielder){
+                if(((models.Fielder)(launch.registration[i])).getPositionAffinity(3) > 0){
+                    for(int j=3;j<8;j++){
+                        if(launch.registration[i] == launch.fieldingGreen[j]){
+                            break;
+                        }else if(j==7){
+                            launch.registration[i].showRegistry(i);
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        //初版強制選擇中外野手為 44號 曾昱磬
+        mockScanner = 44;
+        launch.fieldingGreen[8] = launch.registration[mockScanner];
+        System.out.println("電腦指定 " + mockScanner + "號 " + launch.fieldingGreen[8].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
     }
 }
