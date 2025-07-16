@@ -35,6 +35,8 @@ public class launch {
         System.out.println("========================================");
         System.out.println("        caseBall棒球模擬器");
         System.out.println("========================================");
+        System.out.println("========================================");
+        System.out.println("        編碼已設為UTF-8，若有任何缺字請變更字型...");
         System.out.println("        按輸入鍵開始遊戲");
         scanner.nextLine();
         initializeRegistration();
