@@ -48,10 +48,14 @@ public class white {
         System.out.println("========================================");
         System.out.println("        玩家指定白隊捕手");
         System.out.println("========================================");
+        int[] available = new int[100];
+        int availableCount = 0;
         for(int i=0;i<100;i++){
             if(launch.registration[i] instanceof models.Catcher){
                 if(launch.registration[i] != launch.fieldingGreen[2]){
                     launch.registration[i].showRegistry(i);
+                    available[availableCount] = i;
+                    availableCount++;
                 }
             }
         }
