@@ -68,17 +68,28 @@ public class white {
                 availableMismatch++;
             }
         }
-        if(realScanner != 48){
+        if(availableMismatch == availableCount){
             launch.scanner.nextLine();
             System.out.println("無效的選擇，請重新輸入...");
             launch.scanner.nextLine();
-            while(realScanner != 48){
+            availableMismatch = 0;
+            for(int i=0;i<availableCount;i++){
+                if(realScanner != available[i]){
+                    availableMismatch++;
+                }
+            }
+            while(availableMismatch == availableCount){
                 System.out.println("無效的選擇，請重新輸入...");
                 realScanner = tryMismatch.tryInt(realScanner);
+                availableMismatch = 0;
+                for(int i=0;i<availableCount;i++){
+                    if(realScanner != available[i]){
+                        availableMismatch++;
+                    }
+                }
                 launch.scanner.nextLine();
             }
         }
-
         launch.fieldingWhite[2] = launch.registration[realScanner];
         System.out.println("");
         System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[2].name);
