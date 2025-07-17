@@ -63,7 +63,11 @@ public class white {
         realScanner = -1;
         realScanner = tryMismatch.tryInt(realScanner);
         for(int i=0;i<availableCount;i++){
-
+            if(realScanner != available[i]){
+                if(){
+                    
+                }
+            }
         }
         if(realScanner != 48){
             launch.scanner.nextLine();
