@@ -91,15 +91,19 @@ public class white {
         System.out.println("        玩家指定白隊一壘手");
         System.out.println("========================================");
         available = new int[100];
-
-        //以下未完成 需要導入綠隊全打線重複檢查及角落內野適性檢查
         availableCount = 0;
         for(int i=0;i<100;i++){
             if(launch.registration[i] instanceof models.Fielder){
-                if(launch.registration[i] != launch.fieldingGreen[3]){
-                    launch.registration[i].showRegistry(i);
-                    available[availableCount] = i;
-                    availableCount++;
+                if(((models.Fielder)(launch.registration[i])).getPositionAffinity(0) > 0){
+                    for(int j=3;j<10;j++){
+                        if(launch.registration[i] == launch.fieldingGreen[j]){
+                            break;
+                        }else if(j==9){
+                            launch.registration[i].showRegistry(i);
+                            available[availableCount] = i;
+                            availableCount++;
+                        }
+                    }
                 }
             }
         }
@@ -126,6 +130,56 @@ public class white {
         launch.fieldingWhite[3] = launch.registration[realScanner];
         System.out.println("");
         System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[3].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+
+
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        玩家指定白隊二壘手");
+        System.out.println("========================================");
+        available = new int[100];
+        availableCount = 0;
+
+        //以下未完成 需要導入白隊全打線重複檢查
+        for(int i=0;i<100;i++){
+            if(launch.registration[i] instanceof models.Fielder){
+                if(((models.Fielder)(launch.registration[i])).getPositionAffinity(1) > 0){
+                    for(int j=3;j<10;j++){
+                        if(launch.registration[i] == launch.fieldingGreen[j]){
+                            break;
+                        }else if(j==9){
+                            launch.registration[i].showRegistry(i);
+                            available[availableCount] = i;
+                            availableCount++;
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("輸入選手背號選擇選手...");
+        realScanner = -1;
+        realScanner = tryMismatch.tryInt(realScanner);
+        availableMismatch = 0;
+        for(int i=0;i<availableCount;i++){
+            if(realScanner != available[i]){
+                availableMismatch++;
+            }
+        }
+        while(availableMismatch == availableCount){
+            System.out.println("無效的選擇，請重新輸入...");
+            realScanner = tryMismatch.tryInt(realScanner);
+            availableMismatch = 0;
+            for(int i=0;i<availableCount;i++){
+                if(realScanner != available[i]){
+                    availableMismatch++;
+                }
+            }
+            launch.scanner.nextLine();
+        }
+        launch.fieldingWhite[3] = launch.registration[realScanner];
+        System.out.println("");
+        System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[4].name);
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
     }
