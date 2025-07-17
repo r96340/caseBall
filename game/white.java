@@ -68,27 +68,16 @@ public class white {
                 availableMismatch++;
             }
         }
-        if(availableMismatch == availableCount){
-            launch.scanner.nextLine();
+        while(availableMismatch == availableCount){
             System.out.println("無效的選擇，請重新輸入...");
-            launch.scanner.nextLine();
+            realScanner = tryMismatch.tryInt(realScanner);
             availableMismatch = 0;
             for(int i=0;i<availableCount;i++){
                 if(realScanner != available[i]){
                     availableMismatch++;
                 }
             }
-            while(availableMismatch == availableCount){
-                System.out.println("無效的選擇，請重新輸入...");
-                realScanner = tryMismatch.tryInt(realScanner);
-                availableMismatch = 0;
-                for(int i=0;i<availableCount;i++){
-                    if(realScanner != available[i]){
-                        availableMismatch++;
-                    }
-                }
-                launch.scanner.nextLine();
-            }
+            launch.scanner.nextLine();
         }
         launch.fieldingWhite[2] = launch.registration[realScanner];
         System.out.println("");
