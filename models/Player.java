@@ -4,7 +4,7 @@ package models;
 public abstract class Player {
 
     //屬性
-    public String name;                      //球員名
+    public String name;             //球員名
     protected int luck;             //運氣值
     protected int collaboration;    //默契值
     protected int clutch;           //拚勁值
