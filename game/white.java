@@ -57,8 +57,8 @@ public class white {
         }
         System.out.println("輸入選手背號選擇選手...");
         realScanner = -1;
-        //初版強制選擇捕手為 48號 林詩翔
         realScanner = tryMismatch.tryInt(realScanner);
+
         if(realScanner != 48){
             launch.scanner.nextLine();
             System.out.println("無效的選擇，請重新輸入...");
@@ -69,9 +69,10 @@ public class white {
                 launch.scanner.nextLine();
             }
         }
-        launch.fieldingWhite[1] = launch.registration[realScanner];
+
+        launch.fieldingWhite[2] = launch.registration[realScanner];
         System.out.println("");
-        System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[1].name);
+        System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[2].name);
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
     }
