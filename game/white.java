@@ -62,11 +62,10 @@ public class white {
         System.out.println("輸入選手背號選擇選手...");
         realScanner = -1;
         realScanner = tryMismatch.tryInt(realScanner);
+        int availableMismatch = 0;
         for(int i=0;i<availableCount;i++){
             if(realScanner != available[i]){
-                if(){
-                    
-                }
+                availableMismatch++;
             }
         }
         if(realScanner != 48){
