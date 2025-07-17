@@ -62,7 +62,9 @@ public class white {
         System.out.println("輸入選手背號選擇選手...");
         realScanner = -1;
         realScanner = tryMismatch.tryInt(realScanner);
+        for(int i=0;i<availableCount;i++){
 
+        }
         if(realScanner != 48){
             launch.scanner.nextLine();
             System.out.println("無效的選擇，請重新輸入...");
