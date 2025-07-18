@@ -54,9 +54,11 @@ public class white {
         for(int i=0;i<100;i++){
             if(launch.registration[i] instanceof models.Catcher){
                 if(launch.registration[i] != launch.fieldingGreen[2]){
-                    launch.registration[i].showRegistry(i);
-                    available[availableCount] = i;
-                    availableCount++;
+                    if(launch.registration[i] != launch.fieldingGreen[0]){
+                        launch.registration[i].showRegistry(i);
+                        available[availableCount] = i;
+                        availableCount++;
+                    }
                 }
             }
         }
@@ -97,7 +99,7 @@ public class white {
         for(int i=0;i<100;i++){
             if(launch.registration[i] instanceof models.Fielder){
                 if(((models.Fielder)(launch.registration[i])).getPositionAffinity(0) > 0){
-                    for(int j=3;j<10;j++){
+                    for(int j=0;j<10;j++){
                         if(launch.registration[i] == launch.fieldingGreen[j]){
                             break;
                         }else if(j==9){
@@ -146,7 +148,7 @@ public class white {
         for(int i=0;i<100;i++){
             if(launch.registration[i] instanceof models.Fielder){
                 if(((models.Fielder)(launch.registration[i])).getPositionAffinity(1) > 0){
-                    for(int j=3;j<10;j++){
+                    for(int j=0;j<10;j++){
                         if(launch.registration[i] == launch.fieldingGreen[j]){
                             break;
                         }else if(launch.registration[i] == launch.fieldingWhite[j]){
@@ -197,7 +199,7 @@ public class white {
         for(int i=0;i<100;i++){
             if(launch.registration[i] instanceof models.Fielder){
                 if(((models.Fielder)(launch.registration[i])).getPositionAffinity(0) > 0){
-                    for(int j=3;j<10;j++){
+                    for(int j=0;j<10;j++){
                         if(launch.registration[i] == launch.fieldingGreen[j]){
                             break;
                         }else if(launch.registration[i] == launch.fieldingWhite[j]){
@@ -234,6 +236,210 @@ public class white {
         launch.fieldingWhite[5] = launch.registration[realScanner];
         System.out.println("");
         System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[5].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        launch.scanner.nextLine();
+
+
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        玩家指定白隊游擊手");
+        System.out.println("========================================");
+        available = new int[100];
+        availableCount = 0;
+        for(int i=0;i<100;i++){
+            if(launch.registration[i] instanceof models.Fielder){
+                if(((models.Fielder)(launch.registration[i])).getPositionAffinity(1) > 0){
+                    for(int j=0;j<10;j++){
+                        if(launch.registration[i] == launch.fieldingGreen[j]){
+                            break;
+                        }else if(launch.registration[i] == launch.fieldingWhite[j]){
+                            break;
+                        }else if(j==9){
+                            launch.registration[i].showRegistry(i);
+                            available[availableCount] = i;
+                            availableCount++;
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("輸入選手背號選擇選手...");
+        realScanner = -1;
+        realScanner = tryMismatch.tryInt(realScanner);
+        availableMismatch = 0;
+        for(int i=0;i<availableCount;i++){
+            if(realScanner != available[i]){
+                availableMismatch++;
+            }
+        }
+        while(availableMismatch == availableCount){
+            System.out.println("無效的選擇，請重新輸入...");
+            realScanner = tryMismatch.tryInt(realScanner);
+            availableMismatch = 0;
+            for(int i=0;i<availableCount;i++){
+                if(realScanner != available[i]){
+                    availableMismatch++;
+                }
+            }
+            launch.scanner.nextLine();
+        }
+        launch.fieldingWhite[6] = launch.registration[realScanner];
+        System.out.println("");
+        System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[6].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        launch.scanner.nextLine();
+
+
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        玩家指定白隊左外野手");
+        System.out.println("========================================");
+        available = new int[100];
+        availableCount = 0;
+        for(int i=0;i<100;i++){
+            if(launch.registration[i] instanceof models.Fielder){
+                if(((models.Fielder)(launch.registration[i])).getPositionAffinity(2) > 0){
+                    for(int j=0;j<10;j++){
+                        if(launch.registration[i] == launch.fieldingGreen[j]){
+                            break;
+                        }else if(launch.registration[i] == launch.fieldingWhite[j]){
+                            break;
+                        }else if(j==9){
+                            launch.registration[i].showRegistry(i);
+                            available[availableCount] = i;
+                            availableCount++;
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("輸入選手背號選擇選手...");
+        realScanner = -1;
+        realScanner = tryMismatch.tryInt(realScanner);
+        availableMismatch = 0;
+        for(int i=0;i<availableCount;i++){
+            if(realScanner != available[i]){
+                availableMismatch++;
+            }
+        }
+        while(availableMismatch == availableCount){
+            System.out.println("無效的選擇，請重新輸入...");
+            realScanner = tryMismatch.tryInt(realScanner);
+            availableMismatch = 0;
+            for(int i=0;i<availableCount;i++){
+                if(realScanner != available[i]){
+                    availableMismatch++;
+                }
+            }
+            launch.scanner.nextLine();
+        }
+        launch.fieldingWhite[7] = launch.registration[realScanner];
+        System.out.println("");
+        System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[7].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        launch.scanner.nextLine();
+
+
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        玩家指定白隊中外野手");
+        System.out.println("========================================");
+        available = new int[100];
+        availableCount = 0;
+        for(int i=0;i<100;i++){
+            if(launch.registration[i] instanceof models.Fielder){
+                if(((models.Fielder)(launch.registration[i])).getPositionAffinity(3) > 0){
+                    for(int j=0;j<10;j++){
+                        if(launch.registration[i] == launch.fieldingGreen[j]){
+                            break;
+                        }else if(launch.registration[i] == launch.fieldingWhite[j]){
+                            break;
+                        }else if(j==9){
+                            launch.registration[i].showRegistry(i);
+                            available[availableCount] = i;
+                            availableCount++;
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("輸入選手背號選擇選手...");
+        realScanner = -1;
+        realScanner = tryMismatch.tryInt(realScanner);
+        availableMismatch = 0;
+        for(int i=0;i<availableCount;i++){
+            if(realScanner != available[i]){
+                availableMismatch++;
+            }
+        }
+        while(availableMismatch == availableCount){
+            System.out.println("無效的選擇，請重新輸入...");
+            realScanner = tryMismatch.tryInt(realScanner);
+            availableMismatch = 0;
+            for(int i=0;i<availableCount;i++){
+                if(realScanner != available[i]){
+                    availableMismatch++;
+                }
+            }
+            launch.scanner.nextLine();
+        }
+        launch.fieldingWhite[8] = launch.registration[realScanner];
+        System.out.println("");
+        System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[8].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        launch.scanner.nextLine();
+
+
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        玩家指定白隊右外野手");
+        System.out.println("========================================");
+        available = new int[100];
+        availableCount = 0;
+        for(int i=0;i<100;i++){
+            if(launch.registration[i] instanceof models.Fielder){
+                if(((models.Fielder)(launch.registration[i])).getPositionAffinity(2) > 0){
+                    for(int j=0;j<10;j++){
+                        if(launch.registration[i] == launch.fieldingGreen[j]){
+                            break;
+                        }else if(launch.registration[i] == launch.fieldingWhite[j]){
+                            break;
+                        }else if(j==9){
+                            launch.registration[i].showRegistry(i);
+                            available[availableCount] = i;
+                            availableCount++;
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("輸入選手背號選擇選手...");
+        realScanner = -1;
+        realScanner = tryMismatch.tryInt(realScanner);
+        availableMismatch = 0;
+        for(int i=0;i<availableCount;i++){
+            if(realScanner != available[i]){
+                availableMismatch++;
+            }
+        }
+        while(availableMismatch == availableCount){
+            System.out.println("無效的選擇，請重新輸入...");
+            realScanner = tryMismatch.tryInt(realScanner);
+            availableMismatch = 0;
+            for(int i=0;i<availableCount;i++){
+                if(realScanner != available[i]){
+                    availableMismatch++;
+                }
+            }
+            launch.scanner.nextLine();
+        }
+        launch.fieldingWhite[9] = launch.registration[realScanner];
+        System.out.println("");
+        System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[9].name);
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
         launch.scanner.nextLine();
