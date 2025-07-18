@@ -443,5 +443,54 @@ public class white {
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
         launch.scanner.nextLine();
+
+
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        玩家指定白隊指定打擊");
+        System.out.println("========================================");
+        available = new int[100];
+        availableCount = 0;
+        for(int i=0;i<100;i++){
+            if(launch.registration[i] instanceof models.Hitter){
+                    for(int j=0;j<10;j++){
+                        if(launch.registration[i] == launch.fieldingGreen[j]){
+                            break;
+                        }else if(launch.registration[i] == launch.fieldingWhite[j]){
+                            break;
+                        }else if(j==9){
+                            launch.registration[i].showRegistry(i);
+                            available[availableCount] = i;
+                            availableCount++;
+                        }
+                    }
+            }
+        }
+        System.out.println("輸入選手背號選擇選手...");
+        realScanner = -1;
+        realScanner = tryMismatch.tryInt(realScanner);
+        availableMismatch = 0;
+        for(int i=0;i<availableCount;i++){
+            if(realScanner != available[i]){
+                availableMismatch++;
+            }
+        }
+        while(availableMismatch == availableCount){
+            System.out.println("無效的選擇，請重新輸入...");
+            realScanner = tryMismatch.tryInt(realScanner);
+            availableMismatch = 0;
+            for(int i=0;i<availableCount;i++){
+                if(realScanner != available[i]){
+                    availableMismatch++;
+                }
+            }
+            launch.scanner.nextLine();
+        }
+        launch.fieldingWhite[0] = launch.registration[realScanner];
+        System.out.println("");
+        System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[0].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        launch.scanner.nextLine();
     }
 }
