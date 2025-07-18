@@ -251,4 +251,9 @@ public class green {
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
     }
+
+    public static void setOrder(){
+
+    }
+
 }
