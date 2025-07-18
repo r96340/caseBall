@@ -42,21 +42,21 @@ public class launch {
         scanner.nextLine();
         initializeRegistration();
 
-        //電腦自動指定綠隊成員
+        //電腦自動指定綠隊守位
         green.setPositions();
+        //電腦自動指定綠隊打序
         //green.setOrder();
-        //green.setSP();
-        //green.setBullpen();
-
-        //電腦自動指定白隊登錄投手
-        //white.setSP();
-        //white.setBullpen();
 
         //玩家指定白隊守位
         white.setPositions();
-
         //玩家指定白隊打序
         //white.setOrder();
+
+        //顯示綠隊守位及打序表
+        //green.showLineup();
+
+        //顯示白隊守位及打序表
+        //white.showLineup();
 
         //顯示遊戲規則
         System.out.println("========================================");
