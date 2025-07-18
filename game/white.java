@@ -148,6 +148,8 @@ public class white {
                     for(int j=3;j<10;j++){
                         if(launch.registration[i] == launch.fieldingGreen[j]){
                             break;
+                        }else if(launch.registration[i] == launch.fieldingWhite[j]){
+                            break;
                         }else if(j==9){
                             launch.registration[i].showRegistry(i);
                             available[availableCount] = i;
@@ -177,7 +179,7 @@ public class white {
             }
             launch.scanner.nextLine();
         }
-        launch.fieldingWhite[3] = launch.registration[realScanner];
+        launch.fieldingWhite[4] = launch.registration[realScanner];
         System.out.println("");
         System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[4].name);
         System.out.println("按輸入鍵繼續...");
