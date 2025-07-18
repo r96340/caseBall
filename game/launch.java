@@ -62,12 +62,12 @@ public class launch {
         System.out.println("========================================");
         System.out.println("        規則");
         System.out.println("========================================");
-        System.out.println("此程式接下來會模擬最後一個半局（9）的棒球比賽：");
+        System.out.println("此程式模擬最後一個半局（9）的棒球比賽：");
         System.out.println("上半局玩家將控制投手投球及野手接球；");
         System.out.println("下半局玩家將控制打者打擊。自動進壘。");
         System.out.println("安打暫時只有一壘安打與全壘打兩種。");
-        System.out.println("程式會給出各種選項，玩家必須在十秒鐘以內反應，");
-        System.out.println("否則系統會自動決定結果。");
+        System.out.println("程式將給出各種選項，玩家須在十秒內反應，");
+        System.out.println("否則由系統自動決定結果。");
         System.out.println("（計時功能尚未實作。）");
         System.out.println("========================================");
         System.out.println("        按輸入鍵開始遊戲");
