@@ -253,7 +253,11 @@ public class green {
     }
 
     public static void setOrder(){
-
+        tools.clearScreen.all();
+        System.out.println("========================================");
+        System.out.println("        電腦指定綠隊打序");
+        System.out.println("========================================");
+        
     }
 
 }

@@ -45,7 +45,7 @@ public class launch {
         //電腦自動指定綠隊守位
         green.setPositions();
         //電腦自動指定綠隊打序
-        //green.setOrder();
+        green.setOrder();
 
         //玩家指定白隊守位
         white.setPositions();
