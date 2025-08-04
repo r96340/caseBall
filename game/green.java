@@ -258,6 +258,9 @@ public class green {
         System.out.println("        電腦指定綠隊打序");
         System.out.println("========================================");
         for(int i=0;i<10;i++){
+            if(i==1){
+                continue;
+            }
             System.out.println(launch.fieldingGreen[i].name);
         }
             

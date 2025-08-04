@@ -22,10 +22,10 @@ public class Hitter extends Player {
 
     //建構子
     //只有指定打擊會直接使用這個建構子
-    public Hitter(String name, int luck, int collaboration, int clutch, 
+    public Hitter(String name, int number, int luck, int collaboration, int clutch, 
                   int power, int batControl, int plateDiscipline, int speed, boolean isLefty, int[] pitchTypeSights){
         
-        super(name, luck, collaboration, clutch);
+        super(name, number, luck, collaboration, clutch);
         this.speed           = speed;
         this.power           = power;
         this.batControl      = batControl;

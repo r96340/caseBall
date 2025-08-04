@@ -13,8 +13,8 @@ public class Pitcher extends Player implements Fieldable {
         6:滑球    7:橫掃球    8:蝴蝶球
     */
     
-    public Pitcher(String name, int luck, int collaboration, int clutch, int[] pitchTypeControls){
-        super(name, luck, collaboration, clutch);
+    public Pitcher(String name, int number, int luck, int collaboration, int clutch, int[] pitchTypeControls){
+        super(name, number, luck, collaboration, clutch);
         this.pitchTypeControls = pitchTypeControls;
     }
 

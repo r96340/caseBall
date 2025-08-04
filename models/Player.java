@@ -5,13 +5,15 @@ public abstract class Player {
 
     //屬性
     public String name;             //球員名
+    public int number;              //背號
     protected int luck;             //運氣值
     protected int collaboration;    //默契值
     protected int clutch;           //拚勁值
 
     //建構子
-    protected Player(String name, int luck, int collaboration, int clutch){
+    protected Player(String name, int number, int luck, int collaboration, int clutch){
         this.name                  = name;
+        this.number                = number;
         this.luck                  = luck;
         this.collaboration         = collaboration;
         this.clutch                = clutch;
@@ -24,6 +26,10 @@ public abstract class Player {
 
     public void showRegistry(int number){
         System.out.printf("%d\t%s\t\n", number, name);
+    }
+
+    public void showRegistry(){
+        System.out.printf("%d\t%s\t\n", this.number, name);
     }
 
 }
