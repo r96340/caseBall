@@ -257,7 +257,12 @@ public class green {
         System.out.println("========================================");
         System.out.println("        電腦指定綠隊打序");
         System.out.println("========================================");
-        
+        for(int i=0;i<10;i++){
+            System.out.println(launch.fieldingGreen[i].name);
+        }
+            
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
     }
 
 }
