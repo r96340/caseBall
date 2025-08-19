@@ -109,7 +109,10 @@ public class launch {
         registration[1] = new Fielder("曾子祐", 1, 60, 60, 70, 60, 60,
                                       80, 70, false, new int[]{50, 50}, new int[]{0, 100, 0, 0});
 
-        registration[5] = new Fielder("王博玄", 5, 100, 90, 100, 75, 70,
+        registration[3] = new Fielder("陳文杰", 3, 30, 90, 40, 60, 25,
+                                      10, 50, true, new int[]{50, 50}, new int[]{0, 0, 45, 55});
+
+        registration[6] = new Fielder("王博玄", 6, 100, 90, 100, 75, 70,
                                       50, 90, true, new int[]{20,80}, new int[]{100,0,80,20});
 
         registration[7] = new Fielder("郭永維", 7, 90, 30, 50, 50, 100,

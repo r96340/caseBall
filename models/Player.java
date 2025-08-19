@@ -32,4 +32,7 @@ public abstract class Player {
         System.out.printf("%d\t%s\t\n", this.number, name);
     }
 
+    public void showPosition(){
+        System.out.printf("%d\t%s\t", this.number, name);
+    }
 }

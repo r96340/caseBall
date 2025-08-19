@@ -7,7 +7,6 @@ public class green {
         throw new AssertionError("程式建構錯誤：嘗試實體化功能類別");
     }
 
-    //指定守位
     public static void setPositions() {
 
         tools.clearScreen.all();
@@ -253,6 +252,25 @@ public class green {
     }
 
     public static void setOrder(){
+        displayHitters();
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        displayHitters();
+        launch.orderGreen[0] = (models.Hitter)launch.fieldingGreen[4]; //陳飛霖
+        launch.orderGreen[1] = (models.Hitter)launch.fieldingGreen[7]; //高聖恩
+        launch.orderGreen[2] = (models.Hitter)launch.fieldingGreen[3]; //黃秉揚
+        launch.orderGreen[3] = (models.Hitter)launch.fieldingGreen[8]; //曾昱磬
+        launch.orderGreen[4] = (models.Hitter)launch.fieldingGreen[5]; //杜家明
+        launch.orderGreen[5] = (models.Hitter)launch.fieldingGreen[0]; //藍寅倫
+        launch.orderGreen[6] = (models.Hitter)launch.fieldingGreen[9]; //葉保弟
+        launch.orderGreen[7] = (models.Hitter)launch.fieldingGreen[6]; //胡冠俞
+        launch.orderGreen[8] = (models.Hitter)launch.fieldingGreen[2]; //陳致嘉
+        displayOrder();
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+    }
+
+    private static void displayHitters(){
         tools.clearScreen.all();
         System.out.println("========================================");
         System.out.println("        綠隊打者一覽");
@@ -263,9 +281,25 @@ public class green {
             }
             launch.fieldingGreen[i].showRegistry();
         }
-        System.out.println("按輸入鍵繼續...");
-        launch.scanner.nextLine();
+    }
 
-        
+    private static void displayOrder(){
+        System.out.println("========================================");
+        System.out.println("        綠隊打擊順序");
+        System.out.println("========================================");
+        for(int i=0;i<9;i++){
+            if(launch.orderGreen[i] != null){
+                System.out.printf("第%d棒\t", i+1);
+                launch.orderGreen[i].showPosition();
+                for(int j=0;j<10;j++){
+                    if(launch.fieldingGreen[j] == launch.orderGreen[i]){
+                        System.out.println(tools.convertPosition.toString(j));
+                        break;
+                    }
+                }
+            }else{
+                continue;
+            }
+        }
     }
 }
