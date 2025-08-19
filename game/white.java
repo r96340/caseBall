@@ -25,8 +25,8 @@ public class white {
         }
         System.out.println("輸入選手背號選擇選手...");
         int realScanner = -1;
-        //初版強制選擇投手為 48號 林詩翔
         realScanner = tryMismatch.tryInt(realScanner);
+        //初版強制選擇投手為 48號 林詩翔
         if(realScanner != 48){
             launch.scanner.nextLine();
             System.out.println("無效的選擇，請重新輸入...");
@@ -501,15 +501,36 @@ public class white {
 
 
         displayHitters();
-        launch.orderGreen[0] = (models.Hitter)launch.fieldingGreen[4]; //陳飛霖
-        launch.orderGreen[1] = (models.Hitter)launch.fieldingGreen[7]; //高聖恩
-        launch.orderGreen[2] = (models.Hitter)launch.fieldingGreen[3]; //黃秉揚
-        launch.orderGreen[3] = (models.Hitter)launch.fieldingGreen[8]; //曾昱磬
-        launch.orderGreen[4] = (models.Hitter)launch.fieldingGreen[5]; //杜家明
-        launch.orderGreen[5] = (models.Hitter)launch.fieldingGreen[0]; //藍寅倫
-        launch.orderGreen[6] = (models.Hitter)launch.fieldingGreen[9]; //葉保弟
-        launch.orderGreen[7] = (models.Hitter)launch.fieldingGreen[6]; //胡冠俞
-        launch.orderGreen[8] = (models.Hitter)launch.fieldingGreen[2]; //陳致嘉
+        System.out.println("輸入選手背號選擇選手...");
+        int realScanner = -1;
+        realScanner = tryMismatch.tryInt(realScanner);
+        for(int i=0;i<10;i++){
+            if(launch.fieldingWhite[i].number == realScanner){
+                launch.orderWhite[0] = (models.Hitter)launch.fieldingWhite[i];
+                break;
+            }
+        }
+        if(launch.orderWhite[0] == null){
+
+        }
+
+        if(realScanner != 48){
+            launch.scanner.nextLine();
+            System.out.println("無效的選擇，請重新輸入...");
+            launch.scanner.nextLine();
+            while(realScanner != 48){
+                System.out.println("無效的選擇，請重新輸入...");
+                realScanner = tryMismatch.tryInt(realScanner);
+                launch.scanner.nextLine();
+            }
+        }
+        launch.fieldingWhite[1] = launch.registration[realScanner];
+        System.out.println("");
+        System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[1].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        launch.scanner.nextLine();
+
 
         displayOrder();
         System.out.println("按輸入鍵繼續...");
@@ -550,6 +571,18 @@ public class white {
                 continue;
             }
         }
+    }
+
+    private static boolean checkHitterAvailable(int number){
+        for(int i=0;i<10;i++){
+            if(i==1){
+                continue;
+            }
+            if(launch.fieldingWhite[i].number == number){
+                return true;
+            }
+        }
+        return false;
     }
 
 }
