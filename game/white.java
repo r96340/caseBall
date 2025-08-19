@@ -521,13 +521,14 @@ public class white {
     private static void displayHitters(){
         tools.clearScreen.all();
         System.out.println("========================================");
-        System.out.println("        綠隊打者一覽");
+        System.out.println("        白隊打者一覽");
         System.out.println("========================================");
         for(int i=0;i<10;i++){
             if(i==1){
                 continue;
             }
-            launch.fieldingWhite[i].showRegistry();
+            launch.fieldingWhite[i].showPosition();
+            System.out.println(tools.convertPosition.toString(i));
         }
     }
 

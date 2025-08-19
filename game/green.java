@@ -279,7 +279,8 @@ public class green {
             if(i==1){
                 continue;
             }
-            launch.fieldingGreen[i].showRegistry();
+            launch.fieldingGreen[i].showPosition();
+            System.out.println(tools.convertPosition.toString(i));
         }
     }
 
