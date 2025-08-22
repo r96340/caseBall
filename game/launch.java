@@ -50,7 +50,7 @@ public class launch {
         //玩家指定白隊守位
         white.setPositions();
         //玩家指定白隊打序
-        //white.setOrder();
+        white.setOrder();
 
         //顯示綠隊守位及打序表
         //green.showLineup();

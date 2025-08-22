@@ -3,6 +3,9 @@ package game;
 import tools.*;
 
 public class white {
+
+    public static int realScanner = -1;
+    public static boolean foundAvailablePlayer = false;
     
     //使用私人建構子防止實體化
     private white(){
@@ -24,7 +27,7 @@ public class white {
             }
         }
         System.out.println("輸入選手背號選擇選手...");
-        int realScanner = -1;
+        realScanner = -1;
         realScanner = tryMismatch.tryInt(realScanner);
         //初版強制選擇投手為 48號 林詩翔
         if(realScanner != 48){
@@ -500,43 +503,94 @@ public class white {
         launch.scanner.nextLine();
 
 
+
         displayHitters();
-        System.out.println("輸入選手背號選擇選手...");
+        System.out.println("輸入選手背號選擇第一棒...");
         int realScanner = -1;
+        foundAvailablePlayer = false;
         realScanner = tryMismatch.tryInt(realScanner);
         for(int i=0;i<10;i++){
             if(launch.fieldingWhite[i].number == realScanner){
                 launch.orderWhite[0] = (models.Hitter)launch.fieldingWhite[i];
+                ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
+                foundAvailablePlayer = true;
                 break;
             }
         }
-        if(launch.orderWhite[0] == null){
-
-        }
-
-        if(realScanner != 48){
+        if(foundAvailablePlayer == false){
             launch.scanner.nextLine();
             System.out.println("無效的選擇，請重新輸入...");
             launch.scanner.nextLine();
-            while(realScanner != 48){
+            while(foundAvailablePlayer == false){
                 System.out.println("無效的選擇，請重新輸入...");
                 realScanner = tryMismatch.tryInt(realScanner);
+                for(int i=0;i<10;i++){
+                    if(launch.fieldingWhite[i].number == realScanner){
+                        launch.orderWhite[0] = (models.Hitter)launch.fieldingWhite[i];
+                        ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
+                        foundAvailablePlayer = true;
+                        break;
+                    }
+                }
                 launch.scanner.nextLine();
             }
         }
-        launch.fieldingWhite[1] = launch.registration[realScanner];
         System.out.println("");
-        System.out.println("玩家指定 " + realScanner + "號 " + launch.fieldingWhite[1].name);
+        System.out.println("玩家指定 " + realScanner + "號 " + launch.orderWhite[0].name);
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
         launch.scanner.nextLine();
-
-
         displayOrder();
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
 
 
+
+        displayHitters();
+        System.out.println("輸入選手背號選擇第二棒...");
+        realScanner = -1;
+        foundAvailablePlayer = false;
+        realScanner = tryMismatch.tryInt(realScanner);
+        for(int i=0;i<10;i++){
+            if(launch.fieldingWhite[i].number == realScanner && ((models.Hitter)launch.fieldingWhite[i]).availableForBatting == true){
+                launch.orderWhite[1] = (models.Hitter)launch.fieldingWhite[i];
+                ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
+                foundAvailablePlayer = true;
+                break;
+            }
+        }
+        if(foundAvailablePlayer == false){
+            launch.scanner.nextLine();
+            System.out.println("無效的選擇，請重新輸入...");
+            launch.scanner.nextLine();
+            while(foundAvailablePlayer == false){
+                System.out.println("無效的選擇，請重新輸入...");
+                realScanner = tryMismatch.tryInt(realScanner);
+                for(int i=0;i<10;i++){
+                    if(launch.fieldingWhite[i].number == realScanner){
+                        launch.orderWhite[1] = (models.Hitter)launch.fieldingWhite[i];
+                        ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
+                        foundAvailablePlayer = true;
+                        break;
+                    }
+                }
+                launch.scanner.nextLine();
+            }
+        }
+        System.out.println("");
+        System.out.println("玩家指定 " + realScanner + "號 " + launch.orderWhite[1].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        launch.scanner.nextLine();
+        displayOrder();
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+
+
+
+        displayHitters();
+        System.out.println("輸入選手背號選擇第三棒...");
+        setBatter(2);
     }
 
     private static void displayHitters(){
@@ -555,7 +609,7 @@ public class white {
 
     private static void displayOrder(){
         System.out.println("========================================");
-        System.out.println("        綠隊打擊順序");
+        System.out.println("        白隊打擊順序");
         System.out.println("========================================");
         for(int i=0;i<9;i++){
             if(launch.orderWhite[i] != null){
@@ -573,16 +627,43 @@ public class white {
         }
     }
 
-    private static boolean checkHitterAvailable(int number){
+    private static void setBatter(int index) {
+        realScanner = -1;
+        foundAvailablePlayer = false;
+        realScanner = tryMismatch.tryInt(realScanner);
         for(int i=0;i<10;i++){
-            if(i==1){
-                continue;
-            }
-            if(launch.fieldingWhite[i].number == number){
-                return true;
+            if(launch.fieldingWhite[i].number == realScanner && ((models.Hitter)launch.fieldingWhite[i]).availableForBatting == true){
+                launch.orderWhite[index] = (models.Hitter)launch.fieldingWhite[i];
+                ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
+                foundAvailablePlayer = true;
+                break;
             }
         }
-        return false;
+        if(foundAvailablePlayer == false){
+            launch.scanner.nextLine();
+            System.out.println("無效的選擇，請重新輸入...");
+            launch.scanner.nextLine();
+            while(foundAvailablePlayer == false){
+                System.out.println("無效的選擇，請重新輸入...");
+                realScanner = tryMismatch.tryInt(realScanner);
+                for(int i=0;i<10;i++){
+                    if(launch.fieldingWhite[i].number == realScanner){
+                        launch.orderWhite[index] = (models.Hitter)launch.fieldingWhite[i];
+                        ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
+                        foundAvailablePlayer = true;
+                        break;
+                    }
+                }
+                launch.scanner.nextLine();
+            }
+        }
+        System.out.println("");
+        System.out.println("玩家指定 " + realScanner + "號 " + launch.orderWhite[index].name);
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
+        launch.scanner.nextLine();
+        displayOrder();
+        System.out.println("按輸入鍵繼續...");
+        launch.scanner.nextLine();
     }
-
 }

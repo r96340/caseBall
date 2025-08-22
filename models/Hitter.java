@@ -10,6 +10,7 @@ public class Hitter extends Player {
     int speed;                      //跑壘速度
     boolean isLefty;                  //是否為左打者
     protected int[] pitchTypeSights; //球種辨識力
+    public boolean availableForBatting = true;
 
     //目前簡化為0:直球 1:變化球
 
