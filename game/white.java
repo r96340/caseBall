@@ -518,9 +518,8 @@ public class white {
             }
         }
         if(foundAvailablePlayer == false){
-            launch.scanner.nextLine();
             System.out.println("無效的選擇，請重新輸入...");
-            launch.scanner.nextLine();
+            realScanner = tryMismatch.tryInt(realScanner);
             while(foundAvailablePlayer == false){
                 System.out.println("無效的選擇，請重新輸入...");
                 realScanner = tryMismatch.tryInt(realScanner);
@@ -532,7 +531,6 @@ public class white {
                         break;
                     }
                 }
-                launch.scanner.nextLine();
             }
         }
         System.out.println("");
@@ -560,9 +558,8 @@ public class white {
             }
         }
         if(foundAvailablePlayer == false){
-            launch.scanner.nextLine();
             System.out.println("無效的選擇，請重新輸入...");
-            launch.scanner.nextLine();
+            realScanner = tryMismatch.tryInt(realScanner);
             while(foundAvailablePlayer == false){
                 System.out.println("無效的選擇，請重新輸入...");
                 realScanner = tryMismatch.tryInt(realScanner);
@@ -574,7 +571,6 @@ public class white {
                         break;
                     }
                 }
-                launch.scanner.nextLine();
             }
         }
         System.out.println("");
@@ -591,6 +587,24 @@ public class white {
         displayHitters();
         System.out.println("輸入選手背號選擇第三棒...");
         setBatter(2);
+        displayHitters();
+        System.out.println("輸入選手背號選擇第四棒...");
+        setBatter(3);
+        displayHitters();
+        System.out.println("輸入選手背號選擇第五棒...");
+        setBatter(4);
+        displayHitters();
+        System.out.println("輸入選手背號選擇第六棒...");
+        setBatter(5);
+        displayHitters();
+        System.out.println("輸入選手背號選擇第七棒...");
+        setBatter(6);
+        displayHitters();
+        System.out.println("輸入選手背號選擇第八棒...");
+        setBatter(7);
+        displayHitters();
+        System.out.println("輸入選手背號選擇第九棒...");
+        setBatter(8);
     }
 
     private static void displayHitters(){
@@ -640,9 +654,8 @@ public class white {
             }
         }
         if(foundAvailablePlayer == false){
-            launch.scanner.nextLine();
             System.out.println("無效的選擇，請重新輸入...");
-            launch.scanner.nextLine();
+            realScanner = tryMismatch.tryInt(realScanner);
             while(foundAvailablePlayer == false){
                 System.out.println("無效的選擇，請重新輸入...");
                 realScanner = tryMismatch.tryInt(realScanner);
@@ -654,7 +667,6 @@ public class white {
                         break;
                     }
                 }
-                launch.scanner.nextLine();
             }
         }
         System.out.println("");
