@@ -31,9 +31,8 @@ public class white {
         realScanner = tryMismatch.tryInt(realScanner);
         //初版強制選擇投手為 48號 林詩翔
         if(realScanner != 48){
-            launch.scanner.nextLine();
             System.out.println("無效的選擇，請重新輸入...");
-            launch.scanner.nextLine();
+            realScanner = tryMismatch.tryInt(realScanner);
             while(realScanner != 48){
                 System.out.println("無效的選擇，請重新輸入...");
                 realScanner = tryMismatch.tryInt(realScanner);
