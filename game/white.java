@@ -36,7 +36,6 @@ public class white {
             while(realScanner != 48){
                 System.out.println("無效的選擇，請重新輸入...");
                 realScanner = tryMismatch.tryInt(realScanner);
-                launch.scanner.nextLine();
             }
         }
         launch.fieldingWhite[1] = launch.registration[realScanner];
@@ -82,7 +81,6 @@ public class white {
                     availableMismatch++;
                 }
             }
-            launch.scanner.nextLine();
         }
         launch.fieldingWhite[2] = launch.registration[realScanner];
         System.out.println("");
@@ -131,7 +129,6 @@ public class white {
                     availableMismatch++;
                 }
             }
-            launch.scanner.nextLine();
         }
         launch.fieldingWhite[3] = launch.registration[realScanner];
         System.out.println("");
@@ -182,7 +179,6 @@ public class white {
                     availableMismatch++;
                 }
             }
-            launch.scanner.nextLine();
         }
         launch.fieldingWhite[4] = launch.registration[realScanner];
         System.out.println("");
@@ -233,7 +229,6 @@ public class white {
                     availableMismatch++;
                 }
             }
-            launch.scanner.nextLine();
         }
         launch.fieldingWhite[5] = launch.registration[realScanner];
         System.out.println("");
@@ -284,7 +279,6 @@ public class white {
                     availableMismatch++;
                 }
             }
-            launch.scanner.nextLine();
         }
         launch.fieldingWhite[6] = launch.registration[realScanner];
         System.out.println("");
@@ -335,7 +329,6 @@ public class white {
                     availableMismatch++;
                 }
             }
-            launch.scanner.nextLine();
         }
         launch.fieldingWhite[7] = launch.registration[realScanner];
         System.out.println("");
@@ -386,7 +379,6 @@ public class white {
                     availableMismatch++;
                 }
             }
-            launch.scanner.nextLine();
         }
         launch.fieldingWhite[8] = launch.registration[realScanner];
         System.out.println("");
@@ -437,7 +429,6 @@ public class white {
                     availableMismatch++;
                 }
             }
-            launch.scanner.nextLine();
         }
         launch.fieldingWhite[9] = launch.registration[realScanner];
         System.out.println("");
@@ -486,7 +477,6 @@ public class white {
                     availableMismatch++;
                 }
             }
-            launch.scanner.nextLine();
         }
         launch.fieldingWhite[0] = launch.registration[realScanner];
         System.out.println("");
