@@ -509,6 +509,14 @@ public class white {
         if(foundAvailablePlayer == false){
             System.out.println("無效的選擇，請重新輸入...");
             realScanner = tryMismatch.tryInt(realScanner);
+            for(int i=0;i<10;i++){
+                if(launch.fieldingWhite[i].number == realScanner){
+                    launch.orderWhite[0] = (models.Hitter)launch.fieldingWhite[i];
+                    ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
+                    foundAvailablePlayer = true;
+                    break;
+                }
+            }
             while(foundAvailablePlayer == false){
                 System.out.println("無效的選擇，請重新輸入...");
                 realScanner = tryMismatch.tryInt(realScanner);
@@ -546,19 +554,15 @@ public class white {
                 break;
             }
         }
-        if(foundAvailablePlayer == false){
+        while(foundAvailablePlayer == false){
             System.out.println("無效的選擇，請重新輸入...");
             realScanner = tryMismatch.tryInt(realScanner);
-            while(foundAvailablePlayer == false){
-                System.out.println("無效的選擇，請重新輸入...");
-                realScanner = tryMismatch.tryInt(realScanner);
-                for(int i=0;i<10;i++){
-                    if(launch.fieldingWhite[i].number == realScanner){
-                        launch.orderWhite[1] = (models.Hitter)launch.fieldingWhite[i];
-                        ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
-                        foundAvailablePlayer = true;
-                        break;
-                    }
+            for(int i=0;i<10;i++){
+                if(launch.fieldingWhite[i].number == realScanner){
+                    launch.orderWhite[1] = (models.Hitter)launch.fieldingWhite[i];
+                    ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
+                    foundAvailablePlayer = true;
+                    break;
                 }
             }
         }
@@ -642,19 +646,15 @@ public class white {
                 break;
             }
         }
-        if(foundAvailablePlayer == false){
+        while(foundAvailablePlayer == false){
             System.out.println("無效的選擇，請重新輸入...");
             realScanner = tryMismatch.tryInt(realScanner);
-            while(foundAvailablePlayer == false){
-                System.out.println("無效的選擇，請重新輸入...");
-                realScanner = tryMismatch.tryInt(realScanner);
-                for(int i=0;i<10;i++){
-                    if(launch.fieldingWhite[i].number == realScanner){
-                        launch.orderWhite[index] = (models.Hitter)launch.fieldingWhite[i];
-                        ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
-                        foundAvailablePlayer = true;
-                        break;
-                    }
+            for(int i=0;i<10;i++){
+                if(launch.fieldingWhite[i].number == realScanner){
+                    launch.orderWhite[index] = (models.Hitter)launch.fieldingWhite[i];
+                    ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
+                    foundAvailablePlayer = true;
+                    break;
                 }
             }
         }
