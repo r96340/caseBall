@@ -535,13 +535,11 @@ public class white {
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
         launch.scanner.nextLine();
-        displayOrder();
-        System.out.println("按輸入鍵繼續...");
-        launch.scanner.nextLine();
 
 
 
         displayHitters();
+        displayOrder();
         System.out.println("輸入選手背號選擇第二棒...");
         realScanner = -1;
         foundAvailablePlayer = false;
@@ -571,31 +569,35 @@ public class white {
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
         launch.scanner.nextLine();
-        displayOrder();
-        System.out.println("按輸入鍵繼續...");
-        launch.scanner.nextLine();
 
 
 
         displayHitters();
+        displayOrder();
         System.out.println("輸入選手背號選擇第三棒...");
         setBatter(2);
         displayHitters();
+        displayOrder();
         System.out.println("輸入選手背號選擇第四棒...");
         setBatter(3);
         displayHitters();
+        displayOrder();
         System.out.println("輸入選手背號選擇第五棒...");
         setBatter(4);
         displayHitters();
+        displayOrder();
         System.out.println("輸入選手背號選擇第六棒...");
         setBatter(5);
         displayHitters();
+        displayOrder();
         System.out.println("輸入選手背號選擇第七棒...");
         setBatter(6);
         displayHitters();
+        displayOrder();
         System.out.println("輸入選手背號選擇第八棒...");
         setBatter(7);
         displayHitters();
+        displayOrder();
         System.out.println("輸入選手背號選擇第九棒...");
         setBatter(8);
     }
@@ -662,9 +664,6 @@ public class white {
         System.out.println("玩家指定 " + realScanner + "號 " + launch.orderWhite[index].name);
         System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
-        launch.scanner.nextLine();
-        displayOrder();
-        System.out.println("按輸入鍵繼續...");
         launch.scanner.nextLine();
     }
 }
