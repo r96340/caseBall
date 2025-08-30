@@ -556,7 +556,7 @@ public class white {
             System.out.println("無效的選擇，請重新輸入...");
             realScanner = tryMismatch.tryInt(realScanner);
             for(int i=0;i<10;i++){
-                if(launch.fieldingWhite[i].number == realScanner){
+                if(launch.fieldingWhite[i].number == realScanner && ((models.Hitter)launch.fieldingWhite[i]).availableForBatting == true){
                     launch.orderWhite[1] = (models.Hitter)launch.fieldingWhite[i];
                     ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
                     foundAvailablePlayer = true;
@@ -652,7 +652,7 @@ public class white {
             System.out.println("無效的選擇，請重新輸入...");
             realScanner = tryMismatch.tryInt(realScanner);
             for(int i=0;i<10;i++){
-                if(launch.fieldingWhite[i].number == realScanner){
+                if(launch.fieldingWhite[i].number == realScanner && ((models.Hitter)launch.fieldingWhite[i]).availableForBatting == true){
                     launch.orderWhite[index] = (models.Hitter)launch.fieldingWhite[i];
                     ((models.Hitter)launch.fieldingWhite[i]).availableForBatting = false;
                     foundAvailablePlayer = true;
