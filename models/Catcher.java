@@ -17,4 +17,10 @@ public class Catcher extends Hitter implements Fieldable {
     public void slidingCatch(){};
     public void divingCatch(){};
 
+    
+    @Override
+    public void showPosition(){
+        System.out.printf("%d\t%s\t\n我是捕手", this.number, name);
+    }
+
 }
