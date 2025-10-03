@@ -25,4 +25,9 @@ public class Pitcher extends Player implements Fieldable {
     public void grabDropped(){};
     public void slidingCatch(){};
     public void divingCatch(){};
+
+    @Override
+    public void showPosition(){
+        System.out.printf("%d\t%s\t\n我是投手", this.number, name);
+    }
 }
